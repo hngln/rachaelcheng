@@ -1,0 +1,490 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--BootStrap 5.2.3-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <!--Poppins font-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:100,400,600,700"
+    />
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--Link to other files-->
+    <link rel="stylesheet" href="character.css" />
+    <link rel="stylesheet" href="cake.css" />
+    <link rel="stylesheet" href="firework.css" />
+    <link rel="stylesheet" href="words.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <title>RACHAEL</title>
+    <link rel="icon" type="image/x-icon" href="flower1.png" />
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="greeting">Happy Birthday</div>
+    <div>
+      <div class="komi-container">
+        <div class="komi">
+          <div class="komi-head">
+            <div class="komi-hair-back">
+              <div class="komi-hair-back-1"></div>
+            </div>
+            <div class="komi-ear komi-ear-left"></div>
+            <div class="komi-ear komi-ear-right"></div>
+            <div class="komi-cat-ear komi-cat-ear-left">
+              <div class="komi-cat-ear-fur"></div>
+            </div>
+            <div class="komi-cat-ear komi-cat-ear-right">
+              <div class="komi-cat-ear-fur"></div>
+            </div>
+            <div class="komi-hair-strand"></div>
+            <div class="komi-face"></div>
+            <div class="komi-hair-bangs">
+              <div class="komi-hair-bangs-1"></div>
+              <div class="komi-hair-bangs-2"></div>
+              <div class="komi-hair-bangs-3"></div>
+            </div>
+            <div class="komi-face-inner">
+              <img src="glasses.svg" />
+
+              <div class="komi-eye komi-eye-left">
+                <div class="komi-eye-pupil">
+                  <div class="komi-eye-sparkle"></div>
+                </div>
+              </div>
+              <div class="komi-eye komi-eye-right">
+                <div class="komi-eye-pupil">
+                  <div class="komi-eye-sparkle"></div>
+                </div>
+              </div>
+              <div class="komi-blush komi-blush-left"></div>
+              <div class="komi-blush komi-blush-right"></div>
+            </div>
+          </div>
+          <div class="komi-panel">
+            <div class="komi-hair-extension"></div>
+            <div class="komi-body">
+              <div class="komi-neck">
+                <div class="komi-neck-shadow"></div>
+                <div class="komi-collar komi-collar-left"></div>
+                <div class="komi-collar komi-collar-right"></div>
+                <div class="komi-bow">
+                  <div class="komi-bow-top">
+                    <div class="komi-bow-top-shadow"></div>
+                  </div>
+                  <div class="komi-bow-bottom"></div>
+                </div>
+              </div>
+              <div class="komi-shirt">
+                <div class="komi-shirt-sleeves"></div>
+                <div class="komi-shirt-sleeves-shadow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="plate">
+          <div class="cake-wrap">
+            <div class="cake-topping">
+              <div class="topping-top">
+                <div class="candle-container">
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="star"></div>
+                  <div class="candle-wrap">
+                    <div class="flame-wrap" id="flame"></div>
+                    <div class="candle-base">
+                      <div class="candle-top"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="topping-front">
+                <div class="top-layer"></div>
+                <div class="bottom-layer"></div>
+              </div>
+            </div>
+            <div class="cake-base">
+              <div class="base-front"></div>
+              <div class="base-top"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg class="svg">
+      <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0,0 V0.481 s0.021,0.37,0.078,0.404 s0.035,-0.296,0.102,-0.27 s0.007,0.363,0.096,0.354 s0.028,-0.466,0.1,-0.487 S0.406,0.999,0.457,0.999 s0.03,-0.502,0.075,-0.518 s0.041,0.488,0.081,0.274 c0.007,-0.038,0.021,-0.187,0.044,-0.215 c0.014,-0.017,0.038,0.401,0.075,0.392 s0.023,-0.28,0.074,-0.392 c0.022,-0.04,0.072,0.359,0.1,0.344 c0.057,-0.029,0.094,-0.405,0.094,-0.405 V-0.001"
+        ></path>
+      </clipPath>
+      <clipPath id="my-flame-path" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0.501,0 s0.188,0.101,0.295,0.238 s0.123,0.15,0.169,0.286 S1,0.74,0.928,0.838 S0.711,1,0.501,1 S0.216,0.937,0.09,0.838 s-0.083,-0.149,0,-0.29 s0.23,-0.139,0.333,-0.276 S0.501,0,0.501,0"
+        ></path>
+      </clipPath>
+      <clipPath id="my-star-path" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0.5,0.846 l-0.309,0.154,0.044,-0.357 L0,0.382 l0.336,-0.067 L0.5,0 l0.164,0.315,0.336,0.067,-0.235,0.261,0.044,0.357"
+        ></path>
+      </clipPath>
+    </svg>
+    <!--Rachael-->
+    <div id="content" class="content">
+      <div class="content__container">
+        <ul class="content__container__list">
+          <li class="content__container__list__item" style="color: #809bce">
+            Click(phone)/hover(laptop) on character
+          </li>
+          <li class="content__container__list__item">
+            Click(phone)/hover(laptop) on character
+          </li>
+          <li class="content__container__list__item">
+            This short little animation
+          </li>
+          <li class="content__container__list__item">
+            Is for the birthday gurl
+          </li>
+          <li class="content__container__list__item">
+            I wish you more years of a sweet life
+          </li>
+          <li class="content__container__list__item">Damn, you are old now</li>
+          <li class="content__container__list__item">HAPPY</li>
+          <li class="content__container__list__item">BIRTHDAY</li>
+          <li class="content__container__list__item">RACHAEL</li>
+          <li class="content__container__list__item" style="color: #809bce">
+            Well, I hope so
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--Simone-->
+    <!--<div id="content" class="content">
+      <div class="content__container">
+        <ul class="content__container__list">
+          <li class="content__container__list__item">
+            Click(phone)/hover(laptop) on character
+          </li>
+          <li class="content__container__list__item">
+            This short little animation
+          </li>
+          <li class="content__container__list__item">
+            Is for an energetic girl I know
+          </li>
+          <li class="content__container__list__item">Older?</li>
+          <li class="content__container__list__item">Yes</li>
+          <li class="content__container__list__item">Wiser?</li>
+          <li class="content__container__list__item">Well, I hope so</li>
+          <li class="content__container__list__item">
+            I wish you more years of a sweet life
+          </li>
+          <li class="content__container__list__item">Happy birthday</li>
+          <li class="content__container__list__item">SIMONE</li>
+        </ul>
+      </div>
+    </div>-->
+  </body>
+  <script>
+    /* navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then(function (stream) {
+        var audioContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        var analyser = audioContext.createAnalyser();
+        var microphone = audioContext.createMediaStreamSource(stream);
+        microphone.connect(analyser);
+
+        analyser.fftSize = 256;
+        var bufferLength = analyser.frequencyBinCount;
+        var dataArray = new Uint8Array(bufferLength);
+
+        analyser.getByteFrequencyData(dataArray);
+
+        var flameElement = document.getElementById("flame");
+
+        let loopHasRun = false;
+
+        // Your condition to start the loop
+        const conditionToStartLoop = true;
+
+        function updateFlame() {
+          analyser.getByteFrequencyData(dataArray);
+          let x = 1;
+
+          var average = getAverageVolume(dataArray);
+          if (conditionToStartLoop && !loopHasRun) {
+            if (average > 50) {
+              let i = setInterval(function () {
+                flameElement.style.opacity = x;
+                x = x - 0.1;
+              }, 50);
+
+              loopHasRun = true;
+            }
+          }
+
+          requestAnimationFrame(updateFlame);
+        }
+
+        function getAverageVolume(array) {
+          var values = 0;
+          var average;
+
+          for (var i = 0; i < array.length; i++) {
+            values += array[i];
+          }
+
+          average = values / array.length;
+          return average;
+        }
+
+        updateFlame();
+      })
+      .catch(function (err) {
+        console.error("Error accessing microphone:", err);
+      });*/
+    const timeline = gsap.timeline({
+      duration: 0.3,
+    });
+
+    timeline.fromTo(
+      ".cake-topping",
+      {
+        yPercent: -300,
+        opacity: 0.5,
+      },
+      {
+        yPercent: 0,
+        opacity: 1,
+      }
+    );
+
+    timeline.to(".candle-container", {
+      opacity: 1,
+    });
+
+    timeline.to(".flame-wrap", {
+      scale: 1,
+      ease: "back.out",
+    });
+
+    timeline.to(".greeting", {
+      scale: 1,
+      ease: "back.out",
+    });
+
+    timeline.to(".star", {
+      opacity: 0.5,
+      stagger: 0.05,
+      onComplete: function () {
+        gsap.to(".star", {
+          scale: 0.25,
+          repeat: -1,
+          stagger: 0.1,
+          yoyo: true,
+          yoyoEase: "power1.out",
+        });
+      },
+    });
+    //firework----------------------------------------------------------------------------------------------------------------------------------------------------------
+    // fun options!
+    const PARTICLES_PER_FIREWORK = 150; // 100 - 400 or try 1000
+    const FIREWORK_CHANCE = 0.02; // percentage, set to 0 and click instead
+    const BASE_PARTICLE_SPEED = 0.6; // between 0-4, controls the size of the overall fireworks
+    const FIREWORK_LIFESPAN = 600; // ms
+    const PARTICLE_INITIAL_SPEED = 4.5; // 2-8
+
+    // not so fun options =\
+    const GRAVITY = 9.8;
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let particles = [];
+    let disableAutoFireworks = false;
+    let resetDisable = 0;
+
+    let loop = () => {
+      if (!disableAutoFireworks && Math.random() < FIREWORK_CHANCE) {
+        createFirework();
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((particle, i) => {
+        particle.animate();
+        particle.render();
+        if (
+          particle.y > canvas.height ||
+          particle.x < 0 ||
+          particle.x > canvas.width ||
+          particle.alpha <= 0
+        ) {
+          particles.splice(i, 1);
+        }
+      });
+
+      requestAnimationFrame(loop);
+    };
+
+    let createFirework = (
+      x = Math.random() * canvas.width,
+      y = Math.random() * canvas.height
+    ) => {
+      let speed = Math.random() * 2 + BASE_PARTICLE_SPEED;
+      let maxSpeed = speed;
+
+      let red = ~~(Math.random() * 255);
+      let green = ~~(Math.random() * 255);
+      let blue = ~~(Math.random() * 255);
+
+      // use brighter colours
+      red = red < 10 ? red + 10 : red;
+      green = green < 10 ? green + 10 : green;
+      blue = blue < 10 ? blue + 10 : blue;
+
+      // inner firework
+      for (let i = 0; i < PARTICLES_PER_FIREWORK; i++) {
+        let particle = new Particle(x, y, red, green, blue, speed);
+        particles.push(particle);
+
+        maxSpeed = speed > maxSpeed ? speed : maxSpeed;
+      }
+
+      // outer edge particles to make the firework appear more full
+      for (let i = 0; i < 40; i++) {
+        let particle = new Particle(x, y, red, green, blue, maxSpeed, true);
+        particles.push(particle);
+      }
+    };
+
+    class Particle {
+      constructor(
+        x = 0,
+        y = 0,
+        red = ~~(Math.random() * 255),
+        green = ~~(Math.random() * 255),
+        blue = ~~(Math.random() * 255),
+        speed,
+        isFixedSpeed
+      ) {
+        this.x = x;
+        this.y = y;
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.alpha = 0.05;
+        this.radius = 1 + Math.random();
+        this.angle = Math.random() * 360;
+        this.speed = Math.random() * speed + 0.1;
+        this.velocityX = Math.cos(this.angle) * this.speed;
+        this.velocityY = Math.sin(this.angle) * this.speed;
+        this.startTime = new Date().getTime();
+        this.duration = Math.random() * 300 + FIREWORK_LIFESPAN;
+        this.currentDiration = 0;
+        this.dampening = 30; // slowing factor at the end
+
+        this.colour = this.getColour();
+
+        if (isFixedSpeed) {
+          this.speed = speed;
+          this.velocityY = Math.sin(this.angle) * this.speed;
+          this.velocityX = Math.cos(this.angle) * this.speed;
+        }
+
+        this.initialVelocityX = this.velocityX;
+        this.initialVelocityY = this.velocityY;
+      }
+
+      animate() {
+        this.currentDuration = new Date().getTime() - this.startTime;
+
+        // initial speed kick
+        if (this.currentDuration <= 200) {
+          this.x += this.initialVelocityX * PARTICLE_INITIAL_SPEED;
+          this.y += this.initialVelocityY * PARTICLE_INITIAL_SPEED;
+          this.alpha += 0.01;
+
+          this.colour = this.getColour(240, 240, 240, 0.9);
+        } else {
+          // normal expansion
+          this.x += this.velocityX;
+          this.y += this.velocityY;
+          this.colour = this.getColour(
+            this.red,
+            this.green,
+            this.blue,
+            0.4 + Math.random() * 0.3
+          );
+        }
+
+        this.velocityY += GRAVITY / 1000;
+
+        // slow down particles at the end
+        if (this.currentDuration >= this.duration) {
+          this.velocityX -= this.velocityX / this.dampening;
+          this.velocityY -= this.velocityY / this.dampening;
+        }
+
+        if (this.currentDuration >= this.duration + this.duration / 1.1) {
+          // fade out at the end
+          this.alpha -= 0.02;
+          this.colour = this.getColour();
+        } else {
+          // fade in during expansion
+          if (this.alpha < 1) {
+            this.alpha += 0.03;
+          }
+        }
+      }
+
+      render() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+        ctx.lineWidth = this.lineWidth;
+        ctx.fillStyle = this.colour;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = this.getColour(
+          this.red + 150,
+          this.green + 150,
+          this.blue + 150,
+          1
+        );
+        ctx.fill();
+      }
+
+      getColour(red, green, blue, alpha) {
+        return `rgba(${red || this.red}, ${green || this.green}, ${
+          blue || this.blue
+        }, ${alpha || this.alpha})`;
+      }
+    }
+
+    let updateCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    // run it!
+
+    updateCanvasSize();
+    $(window).resize(updateCanvasSize);
+
+    loop();
+  </script>
+</html>

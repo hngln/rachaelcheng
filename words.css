@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Rouge+Script&display=swap');
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
+
+.greeting {
+    margin-top: 2rem;
+    font-family: 'Cookie', cursive;
+    font-size: 6rem;
+    color: white;
+    transform: scale(0);
+}
+
+@media screen and (max-width: 1000px) {
+    .greeting {
+        font-size: 4.5rem;
+        margin-top: 2.5;
+    }
+
+}
+
+.message {
+    font-family: 'Cookie', cursive;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.content {
+    position: absolute;
+    height: 10rem;
+    overflow: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    line-height: 40px;
+    color: #ecf0f1;
+    z-index: 10;
+    bottom: -2rem;
+}
+
+.display-none {
+    display: none;
+}
+
+.content__container {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0;
+    top: 40%;
+}
+
+.content__container__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation-name: change;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 30s;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 5s;
+    width: 100%;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+
+}
+
+.content__container__list__item {
+    line-height: 40px;
+    margin: 0;
+    text-align: center;
+
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        position: absolute;
+        height: 7rem;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.2rem;
+        line-height: 40px;
+        color: #ecf0f1;
+        z-index: 10;
+    }
+
+}
+
+.square {
+    background-color: var(--background);
+    width: 100%;
+    height: 45vh;
+    z-index: 0;
+    position: absolute;
+    top: 60vh;
+}
+
+@-webkit-keyframes change {
+
+    0%,
+    5% {
+        transform: translatey(0);
+    }
+
+    10%,
+    15% {
+        transform: translatey(-2.5rem);
+    }
+
+    20%,
+    25% {
+        transform: translatey(-5rem);
+    }
+
+    30%,
+    35% {
+        transform: translatey(-7.5rem);
+    }
+
+    40%,
+    45% {
+        transform: translatey(-10rem);
+    }
+
+    50%,
+    55% {
+        transform: translatey(-12.5rem);
+    }
+
+    60%,
+    65% {
+        transform: translatey(-15rem);
+    }
+
+    70%,
+    75% {
+        transform: translatey(-17.5rem);
+    }
+
+    80%,
+    85% {
+        transform: translatey(-20rem);
+    }
+
+    90%,
+    100% {
+        transform: translatey(-22.5rem);
+    }
+}
+
+@keyframes change {
+
+    0%,
+    5% {
+        transform: translatey(0);
+    }
+
+    10%,
+    15% {
+        transform: translatey(-2.5rem);
+    }
+
+    20%,
+    25% {
+        transform: translatey(-5rem);
+    }
+
+    30%,
+    35% {
+        transform: translatey(-7.5rem);
+    }
+
+    40%,
+    45% {
+        transform: translatey(-10rem);
+    }
+
+    50%,
+    55% {
+        transform: translatey(-12.5rem);
+    }
+
+    60%,
+    65% {
+        transform: translatey(-15rem);
+    }
+
+    70%,
+    75% {
+        transform: translatey(-17.5rem);
+    }
+
+    80%,
+    85% {
+        transform: translatey(-20rem);
+    }
+
+    90%,
+    100% {
+        transform: translatey(-22.5rem);
+    }
+}

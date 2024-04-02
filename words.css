@@ -58,11 +58,11 @@ body {
     padding: 0;
     list-style: none;
     animation-name: change;
-    animation-duration: 50s;
+    animation-duration: 35s;
     animation-fill-mode: forwards;
     animation-delay: 5s;
     -webkit-animation-name: change;
-    -webkit-animation-duration: 50s;
+    -webkit-animation-duration: 35s;
     -webkit-animation-fill-mode: forwards;
     -webkit-animation-delay: 5s;
     width: 100%;
